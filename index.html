@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Capaure Data transforme vos données opérationnelles en leviers de performance mesurables. CDO-as-a-Service, Coaching Data, Pack KPI pour PME et coopératives.">
+  <meta name="keywords" content="Data, CDO, Business Intelligence, PME, Coopératives, Performance, KPI, Trésorerie">
+  <meta name="author" content="Capaure Data">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Capaure Data — Pilotez vos performances par la donnée">
+  <meta property="og:description" content="Transformez vos données en leviers de performance mesurables avec Capaure Data.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://capaure.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Capaure Data — Pilotez vos performances par la donnée">
+  <meta name="twitter:description" content="Transformez vos données en leviers de performance mesurables.">
+  <link rel="canonical" href="https://capaure.com/">
+  <title>Capaure Data — Pilotez vos performances par la donnée | Expert Data pour PME</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── HERO CARROUSEL ── */
+    .hero-carousel {
+      position: relative; overflow: hidden;
+      min-height: calc(100vh - 68px);
+    }
+    .hero-slide {
+      position: absolute; inset: 0;
+      min-height: calc(100vh - 68px);
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 4rem;
+      padding-left: 8vw; padding-right: 6vw;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      pointer-events: none;
+    }
+    .hero-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 1;
+    }
+    .hero-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .hero-bg-circle { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .18; }
+    .hero-bg-circle.c1 { width: 600px; height: 600px; background: var(--teal); right: -100px; top: -100px; }
+    .hero-bg-circle.c2 { width: 300px; height: 300px; background: var(--teal-mid); left: 30%; bottom: 5%; }
+    .hero-watermark {
+      position: absolute; right: 3vw; top: 50%; transform: translateY(-50%);
+      width: 52vw; max-width: 700px; opacity: .04; pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; }
+    .hero-slide h1 { font-size: clamp(2.4rem,4.5vw,4rem); animation: fadeUp .7s .1s ease both; }
+    .hero-sub { font-size: 1.05rem; line-height: 1.7; color: var(--dark-soft); max-width: 480px; margin-bottom: 2.5rem; animation: fadeUp .7s .2s ease both; }
+    .hero-actions { display: flex; gap: 1rem; align-items: center; animation: fadeUp .7s .3s ease both; }
+    .hero-kpis { display: flex; gap: 2rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); animation: fadeUp .7s .4s ease both; flex-wrap: wrap; }
+    .kpi-item { max-width: 160px; }
+    .kpi-value { font-size: 1.8rem; line-height: 1; margin-bottom: .2rem; }
+    .kpi-label-main { font-size: .95rem; font-weight: 600; color: var(--dark); margin-top: .3rem; }
+    .kpi-label { font-size: .78rem; color: var(--gray); line-height: 1.4; margin-top: .2rem; }
+    .hero-visual { position: relative; z-index: 2; animation: fadeIn .8s .2s ease both; }
+
+    /* Leviers */
+    .hero-levers { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin: 2.5rem 0; }
+    .lever-item { background: rgba(26,188,176,.08); border: 1px solid rgba(26,188,176,.2); border-radius: 12px; padding: 1.5rem; text-align: center; transition: all .3s; }
+    .lever-item:hover { background: rgba(26,188,176,.12); border-color: var(--teal); }
+    .lever-icon { font-size: 2rem; margin-bottom: .8rem; }
+    .lever-title { font-family: 'DM Serif Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--dark); margin-bottom: .5rem; }
+    .lever-desc { font-size: .85rem; color: var(--dark-soft); line-height: 1.5; }
+
+    /* Data Journey Diagram */
+    .data-journey-diagram { display: flex; align-items: center; gap: 2rem; background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 8px 32px rgba(26,188,176,.15); }
+    .journey-step { display: flex; align-items: flex-start; gap: 1.2rem; flex: 1; }
+    .step-circle { width: 56px; height: 56px; min-width: 56px; background: linear-gradient(135deg, var(--teal), var(--teal-mid)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 700; color: white; font-family: 'Space Mono', monospace; }
+    .step-content { flex: 1; }
+    .step-question { font-family: 'DM Serif Display', serif; font-size: 1rem; font-weight: 600; color: var(--dark); margin-bottom: .5rem; line-height: 1.3; }
+    .step-desc { font-size: .85rem; color: var(--dark-soft); line-height: 1.5; }
+    .journey-arrow { font-size: 1.8rem; color: var(--teal); font-weight: 700; }
+
+    /* Dashboard mockup */
+    .dashboard-card { background: white; border-radius: 20px; box-shadow: var(--shadow-lg); overflow: hidden; border: 1px solid var(--border); }
+    .dashboard-header { background: var(--dark); padding: 1rem 1.5rem; display: flex; align-items: center; gap: .8rem; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot.r { background: #ff5f57; } .dot.y { background: #ffbd2e; } .dot.g { background: #28ca41; }
+    .dashboard-title { color: rgba(255,255,255,.5); font-family: 'Space Mono', monospace; font-size: .72rem; margin-left: auto; }
+    .dashboard-body { padding: 1.5rem; }
+    .dash-metric-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+    .dash-metric { background: var(--light); border-radius: 12px; padding: 1rem; border: 1px solid var(--border); }
+    .dash-metric-val { font-family: 'Space Mono', monospace; font-size: 1.4rem; font-weight: 700; color: var(--dark); }
+    .dash-metric-val.up { color: var(--teal); }
+    .dash-metric-lbl { font-size: .7rem; color: var(--gray); text-transform: uppercase; letter-spacing: .05em; margin-top: .2rem; }
+    .dash-metric-delta { font-size: .72rem; font-weight: 600; margin-top: .3rem; }
+    .dash-metric-delta.pos { color: var(--teal); }
+    .mini-chart { display: flex; align-items: flex-end; gap: 3px; height: 40px; margin-top: .5rem; }
+    .mini-bar { flex: 1; background: var(--teal-mid); border-radius: 3px 3px 0 0; }
+    .mini-bar.active { background: var(--teal); }
+    .progress-item { margin-bottom: .8rem; }
+    .progress-header { display: flex; justify-content: space-between; margin-bottom: .3rem; }
+    .progress-label { font-size: .78rem; color: var(--dark-soft); font-weight: 500; }
+    .progress-pct { font-family: 'Space Mono', monospace; font-size: .75rem; color: var(--teal); font-weight: 700; }
+    .progress-track { height: 6px; background: var(--teal-light); border-radius: 100px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--teal-mid), var(--teal)); border-radius: 100px; animation: growBar 1.5s ease both; }
+
+    /* Carousel dots */
+    .carousel-dots {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      display: flex; gap: .8rem; z-index: 10;
+    }
+    .carousel-dots .dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      background: rgba(26,188,176,.3); cursor: pointer;
+      transition: all .3s; border: none; padding: 0;
+    }
+    .carousel-dots .dot.active {
+      background: var(--teal); width: 32px; border-radius: 100px;
+    }
+
+    /* Services aperçu */
+    .services-section { background: var(--light); padding: 5rem 8vw; }
+    .services-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+    .service-card { background: white; border-radius: 16px; padding: 2rem; border: 1px solid var(--border); transition: transform .25s, box-shadow .25s, border-color .25s; position: relative; overflow: hidden; }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--teal-mid), var(--teal)); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--teal-mid); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon { width: 48px; height: 48px; background: var(--teal-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.2rem; }
+    .service-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: .6rem; }
+    .service-card p { font-size: .88rem; line-height: 1.6; color: var(--dark-soft); }
+    .service-tag { display: inline-block; margin-top: 1rem; font-size: .72rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--teal); background: var(--teal-light); padding: .2rem .6rem; border-radius: 4px; }
+
+    /* Méthode */
+    .method-section { background: var(--dark); color: white; position: relative; overflow: hidden; padding: 5rem 8vw; }
+    .method-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(26,188,176,.12) 0%, transparent 70%); pointer-events: none; }
+    .method-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; margin-top: 3.5rem; position: relative; margin-left: -8vw; margin-right: -8vw; padding-left: 8vw; padding-right: 8vw; }
+    .method-steps::before { content: ''; position: absolute; top: 24px; left: 8vw; right: 8vw; height: 1px; background: linear-gradient(90deg, transparent, var(--teal), var(--teal), transparent); opacity: .3; }
+    .method-step { padding: 2rem 1.5rem; }
+    .step-num { font-family: 'Space Mono', monospace; font-size: 2.5rem; font-weight: 700; color: var(--teal); opacity: .25; line-height: 1; margin-bottom: 1rem; }
+    .step-dot { width: 12px; height: 12px; background: var(--teal); border-radius: 50%; margin-bottom: 1.2rem; box-shadow: 0 0 16px var(--teal); }
+    .method-step h3 { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: white; margin-bottom: .5rem; }
+    .method-step p { font-size: .84rem; line-height: 1.6; color: rgba(255,255,255,.55); }
+
+    /* Secteurs */
+    section.reveal:not(.services-section) > div { padding: 5rem 8vw; }
+    .sectors-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
+    .sector-card { display: flex; align-items: flex-start; gap: 1.2rem; background: white; border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; transition: border-color .2s, box-shadow .2s; }
+    .sector-card:hover { border-color: var(--teal); box-shadow: 0 4px 24px rgba(26,188,176,.12); }
+    .sector-icon-wrap { width: 44px; height: 44px; flex-shrink: 0; background: var(--teal-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+    .sector-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: .4rem; }
+    .sector-card p { font-size: .84rem; color: var(--dark-soft); line-height: 1.5; }
+
+    @media (max-width: 900px) {
+      .hero-slide { grid-template-columns: 1fr; padding: 5rem 6vw 4rem; }
+      .hero-visual { display: none; }
+      .hero-levers { grid-template-columns: repeat(2,1fr); }
+      .services-header { grid-template-columns: 1fr; gap: 1rem; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .method-steps { grid-template-columns: 1fr 1fr; }
+      .sectors-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero-levers { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .method-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo.png" alt="Capaure Data">
+    <span class="nav-logo-fallback">Capaure <strong>Data</strong></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Accueil</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="cas-clients.html">Cas clients</a></li>
+    <li><a href="a-propos.html">À propos</a></li>
+    <li><a href="contact.html" class="nav-cta">Parlons-en →</a></li>
+  </ul>
+  <div class="nav-burger" id="navBurger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO CARROUSEL -->
+<section class="hero-carousel">
+  <!-- Diapositive 1 : La donnée au service de votre terrain -->
+  <div class="hero-slide active">
+    <div class="hero-bg">
+      <div class="hero-bg-circle c1"></div>
+      <div class="hero-bg-circle c2"></div>
+    </div>
+    <svg class="hero-watermark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100,20 C55,20 20,55 20,100 C20,145 55,180 100,180 C145,180 180,145 180,100" fill="none" stroke="#1ABCB0" stroke-width="2.5"/>
+      <path d="M100,35 C63,35 35,63 35,100 C35,137 63,165 100,165 C137,165 165,137 165,100" fill="none" stroke="#1ABCB0" stroke-width="2.5"/>
+      <path d="M100,50 C71,50 50,71 50,100 C50,129 71,150 100,150 C129,150 150,129 150,100" fill="none" stroke="#1ABCB0" stroke-width="2.5"/>
+      <path d="M100,65 C79,65 65,79 65,100 C65,121 79,135 100,135 C121,135 135,121 135,100" fill="none" stroke="#1ABCB0" stroke-width="2.5"/>
+      <path d="M100,80 C87,80 80,87 80,100 C80,113 87,120 100,120 C113,120 120,113 120,100" fill="none" stroke="#1ABCB0" stroke-width="2.5"/>
+      <circle cx="100" cy="100" r="5" fill="#1ABCB0"/>
+    </svg>
+    <div class="hero-content">
+      <div class="eyebrow-pill">Offre pour les entreprises à données sous-exploitées</div>
+      <h1>La donnée<br>au service de <em>votre terrain</em></h1>
+      <p class="hero-sub">Capaure Data transforme vos données opérationnelles en leviers de performance mesurables — pour les PME et coopératives qui veulent des résultats concrets, pas des slides.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn-primary">Diagnostic gratuit →</a>
+        <a href="services.html" class="btn-secondary">Nos offres <span class="arrow">→</span></a>
+      </div>
+      <div class="hero-kpis">
+        <div class="kpi-item"><div class="kpi-value">💰</div><div class="kpi-label-main">Vendre plus</div><div class="kpi-label">Chaque devis non transformé est du CA perdu. On le traque et on le récupère.</div></div>
+        <div class="kpi-item"><div class="kpi-value">📦</div><div class="kpi-label-main">Livrer mieux</div><div class="kpi-label">Moins de retards = moins de pénalités et plus de renouvellements.</div></div>
+        <div class="kpi-item"><div class="kpi-value">📉</div><div class="kpi-label-main">Encaisser vite</div><div class="kpi-label">Des créances mieux pilotées, c'est de la trésorerie libérée.</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="dashboard-card">
+        <div class="dashboard-header">
+          <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+          <span class="dashboard-title">capaure · tableau de bord</span>
+        </div>
+        <div class="dashboard-body">
+          <div class="dash-metric-row">
+            <div class="dash-metric"><div class="dash-metric-val up">87%</div><div class="dash-metric-lbl">Livraisons OTD</div><div class="dash-metric-delta pos">↑ +12pts</div></div>
+            <div class="dash-metric"><div class="dash-metric-val up">23%</div><div class="dash-metric-lbl">Conv. devis</div><div class="dash-metric-delta pos">↑ +8pts</div></div>
+            <div class="dash-metric"><div class="dash-metric-val">-18j</div><div class="dash-metric-lbl">DSO créances</div><div class="dash-metric-delta pos">↓ amélioré</div></div>
+          </div>
+          <div class="mini-chart">
+            <div class="mini-bar" style="height:40%"></div><div class="mini-bar" style="height:55%"></div>
+            <div class="mini-bar" style="height:45%"></div><div class="mini-bar" style="height:65%"></div>
+            <div class="mini-bar" style="height:70%"></div><div class="mini-bar" style="height:60%"></div>
+            <div class="mini-bar active" style="height:87%"></div>
+          </div>
+          <div style="height:1px;background:var(--border);margin:1rem 0"></div>
+          <div class="progress-item"><div class="progress-header"><span class="progress-label">Conversion devis</span><span class="progress-pct">87%</span></div><div class="progress-track"><div class="progress-fill" style="width:87%"></div></div></div>
+          <div class="progress-item"><div class="progress-header"><span class="progress-label">Livraisons à l'heure</span><span class="progress-pct">74%</span></div><div class="progress-track"><div class="progress-fill" style="width:74%"></div></div></div>
+          <div class="progress-item"><div class="progress-header"><span class="progress-label">Recouvrement créances</span><span class="progress-pct">91%</span></div><div class="progress-track"><div class="progress-fill" style="width:91%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Diapositive 2 : 30% des dirigeants + leviers -->
+  <div class="hero-slide">
+    <div class="hero-bg">
+      <div class="hero-bg-circle c1" style="background: rgba(26,188,176,.15)"></div>
+      <div class="hero-bg-circle c2" style="background: rgba(26,188,176,.08)"></div>
+    </div>
+    <div class="hero-content">
+      <div class="eyebrow-pill">Le défi des dirigeants</div>
+      <h1>30% des dirigeants<br>jugent leur <em>trésorerie difficile</em></h1>
+      <p class="hero-sub">Débouchés incertains, rentabilité fragile, cash difficile à récupérer, productivité sous-optimale. Capaure Data active les quatre leviers clés pour transformer cette situation.</p>
+      <div class="hero-levers">
+        <div class="lever-item">
+          <div class="lever-icon">💵</div>
+          <div class="lever-title">Prix</div>
+          <div class="lever-desc">Optimiser votre positionnement tarifaire par segment client.</div>
+        </div>
+        <div class="lever-item">
+          <div class="lever-icon">📊</div>
+          <div class="lever-title">Coûts</div>
+          <div class="lever-desc">Identifier et réduire les coûts cachés et les inefficacités.</div>
+        </div>
+        <div class="lever-item">
+          <div class="lever-icon">⚙️</div>
+          <div class="lever-title">Productivité</div>
+          <div class="lever-desc">Augmenter l'output par ressource avec des données fiables.</div>
+        </div>
+        <div class="lever-item">
+          <div class="lever-icon">📈</div>
+          <div class="lever-title">Ventes</div>
+          <div class="lever-desc">Convertir plus de devis et augmenter le panier moyen.</div>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn-primary">Diagnostic gratuit →</a>
+        <a href="services.html" class="btn-secondary">Nos offres <span class="arrow">→</span></a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="data-journey-diagram">
+        <div class="journey-step step-1">
+          <div class="step-circle">1</div>
+          <div class="step-content">
+            <div class="step-question">Ai-je accès à l'information ?</div>
+            <div class="step-desc">Collecte et consolidation</div>
+          </div>
+        </div>
+        <div class="journey-arrow">→</div>
+        <div class="journey-step step-2">
+          <div class="step-circle">2</div>
+          <div class="step-content">
+            <div class="step-question">Comment la transformer en valeur ?</div>
+            <div class="step-desc">Analyse et pilotage KPI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Indicateurs de navigation -->
+  <div class="carousel-dots">
+    <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+    <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+  </div>
+</section>
+
+<!-- SERVICES APERÇU -->
+<section class="services-section reveal">
+  <div class="services-header">
+    <div>
+      <h2>Ce que nous faisons : Des offres taillées<br>pour votre <em>réalité</em></h2>
+    </div>
+    <p style="font-size:1.05rem;line-height:1.7;color:var(--dark-soft)">Pas de projet pharaonique. Des chantiers data calibrés à votre taille, avec un interlocuteur unique et disponible.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-icon">🎯</div><h3>Votre Expert Data partagé</h3><p>Un expert data à temps partagé, sans le coût d'un plein temps. Stratégie, gouvernance et pilotage de la performance sur mesure.</p><span class="service-tag">Flexible</span></div>
+    <div class="service-card"><div class="service-icon">🌱</div><h3>Coaching Alternance Data</h3><p>Formez un talent data en interne avec des aides OPCO. On cadre, encadre et livre des résultats réels.</p><span class="service-tag">Subventionnable</span></div>
+    <div class="service-card"><div class="service-icon">📊</div><h3>Pack KPI</h3><p>Identifiez les indicateurs qui correspondent à vos douleurs actuelles et pilotez-les en temps réel sous 8 semaines.</p><span class="service-tag">Quick win</span></div>
+  </div>
+  <div style="text-align:center;margin-top:2.5rem"><a href="services.html" class="btn-primary">Voir toutes nos offres →</a></div>
+</section>
+
+<!-- MÉTHODE -->
+<section class="method-section reveal">
+  <h2 style="color:white">Une méthode en 4 temps,<br><em>zéro jargon</em></h2>
+  <p style="font-size:1.05rem;line-height:1.7;color:rgba(255,255,255,.65);max-width:560px">Du diagnostic à la livraison, vous savez toujours où on en est et ce que ça produit.</p>
+  <div class="method-steps">
+    <div class="method-step"><div class="step-num">01</div><div class="step-dot"></div><h3>Diagnostic</h3><p>Cartographie de vos flux data dont les données absentes. Identification des irritants et des gains rapides.</p></div>
+    <div class="method-step"><div class="step-num">02</div><div class="step-dot"></div><h3>Cadrage</h3><p>Définition des 3 KPIs cibles. Feuille de route priorisée et engagement contractuel.</p></div>
+    <div class="method-step"><div class="step-num">03</div><div class="step-dot"></div><h3>Déploiement</h3><p>Implémentation outillée. Itérations courtes avec vos équipes.</p></div>
+    <div class="method-step"><div class="step-num">04</div><div class="step-dot"></div><h3>Mesure & ROI</h3><p>Reporting des gains. Rémunération indexée sur les KPIs atteints.</p></div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<div class="cta-band reveal">
+  <div><h2>Un diagnostic gratuit pour commencer</h2><p>30 minutes, aucun engagement. On identifie votre KPI n°1 à travailler.</p></div>
+  <a href="contact.html" class="btn-white">Réserver mon diagnostic →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand"><img src="assets/logo.png" alt="Capaure Data"><p>Votre partenaire data pour PME et coopératives. Performance mesurable, rémunération aux résultats.</p></div>
+  <div><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="services.html">Services</a></li><li><a href="cas-clients.html">Cas clients</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  <div><h4>Contact</h4><ul><li><a href="mailto:contact@capaure.com">contact@capaure.com</a></li><li><a href="contact.html">Prendre RDV →</a></li></ul></div>
+</footer>
+<div class="footer-bottom"><span>© 2025 Capaure Data</span><span><a href="#">Mentions légales</a> · <a href="#">RGPD</a></span></div>
+
+<script src="js/main.js"></script>
+<script>
+  // Carrousel
+  document.querySelectorAll('.carousel-dots .dot').forEach(dot => {
+    dot.addEventListener('click', function() {
+      const slideIndex = parseInt(this.dataset.slide);
+      showSlide(slideIndex);
+    });
+  });
+
+  function showSlide(index) {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+  }
+
+  // Auto-rotate carrousel toutes les 5 secondes
+  let currentSlide = 0;
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % 2;
+    showSlide(currentSlide);
+  }, 5000);
+</script>
+</body>
+</html>
