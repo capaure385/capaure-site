@@ -98,6 +98,225 @@
     .progress-header { display: flex; justify-content: space-between; margin-bottom: .3rem; }
     .progress-label { font-size: .78rem; color: var(--dark-soft); font-weight: 500; }
     .progress-pct { font-family: 'Space Mono', monospace; font-size: .75rem; color: var(--teal); font-weight: 700; }
+
+    /* ── RESPONSIVE MOBILE ── */
+    @media (max-width: 1024px) {
+      .hero-slide {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        min-height: auto;
+      }
+      .hero-levers {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      .data-journey-diagram {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .journey-step {
+        width: 100%;
+      }
+      .journey-arrow {
+        transform: rotate(90deg);
+        margin: 0.5rem 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-slide {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        min-height: auto;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+      .hero-slide h1 {
+        font-size: clamp(1.8rem, 5vw, 2.8rem);
+      }
+      .hero-sub {
+        font-size: 0.95rem;
+        max-width: 100%;
+      }
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-actions a, .hero-actions button {
+        width: 100%;
+        text-align: center;
+      }
+      .hero-kpis {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .kpi-item {
+        max-width: 100%;
+      }
+      .hero-levers {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .lever-item {
+        padding: 1.2rem;
+      }
+      .lever-icon {
+        font-size: 1.5rem;
+      }
+      .lever-title {
+        font-size: 1rem;
+      }
+      .lever-desc {
+        font-size: 0.8rem;
+      }
+      .data-journey-diagram {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+      }
+      .journey-step {
+        width: 100%;
+      }
+      .step-circle {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        font-size: 1.2rem;
+      }
+      .step-question {
+        font-size: 0.95rem;
+      }
+      .step-desc {
+        font-size: 0.8rem;
+      }
+      .journey-arrow {
+        display: none;
+      }
+      .dashboard-card {
+        border-radius: 12px;
+      }
+      .dashboard-body {
+        padding: 1rem;
+      }
+      .dash-metric-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+      }
+      .dash-metric {
+        padding: 0.8rem;
+      }
+      .dash-metric-val {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-slide {
+        padding-left: 3vw;
+        padding-right: 3vw;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+      .hero-slide h1 {
+        font-size: clamp(1.6rem, 4vw, 2.2rem);
+        margin-bottom: 1rem;
+      }
+      .hero-sub {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+      }
+      .hero-actions {
+        gap: 0.5rem;
+      }
+      .hero-actions a, .hero-actions button {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.2rem;
+      }
+      .hero-kpis {
+        gap: 1rem;
+        padding-top: 1rem;
+        margin-top: 1.5rem;
+        border-top: 1px solid var(--border);
+      }
+      .kpi-value {
+        font-size: 1.4rem;
+      }
+      .kpi-label-main {
+        font-size: 0.85rem;
+      }
+      .kpi-label {
+        font-size: 0.7rem;
+      }
+      .hero-levers {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        margin: 1.5rem 0;
+      }
+      .lever-item {
+        padding: 1rem;
+      }
+      .lever-icon {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+      .lever-title {
+        font-size: 0.95rem;
+      }
+      .lever-desc {
+        font-size: 0.75rem;
+      }
+      .data-journey-diagram {
+        padding: 1.2rem;
+        gap: 0.8rem;
+      }
+      .journey-step {
+        gap: 0.8rem;
+      }
+      .step-circle {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 1rem;
+      }
+      .step-question {
+        font-size: 0.9rem;
+      }
+      .step-desc {
+        font-size: 0.75rem;
+      }
+      .dashboard-card {
+        border-radius: 8px;
+      }
+      .dashboard-header {
+        padding: 0.8rem 1rem;
+      }
+      .dashboard-body {
+        padding: 0.8rem;
+      }
+      .dash-metric-row {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+        margin-bottom: 0.8rem;
+      }
+      .dash-metric {
+        padding: 0.6rem;
+      }
+      .dash-metric-val {
+        font-size: 1rem;
+      }
+      .dash-metric-lbl {
+        font-size: 0.65rem;
+      }
+      .mini-chart {
+        height: 30px;
+        gap: 2px;
+      }
+    }
     .progress-track { height: 6px; background: var(--teal-light); border-radius: 100px; overflow: hidden; }
     .progress-fill { height: 100%; background: linear-gradient(90deg, var(--teal-mid), var(--teal)); border-radius: 100px; animation: growBar 1.5s ease both; }
 
