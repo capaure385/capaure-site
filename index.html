@@ -22,21 +22,25 @@
   <style>
     /* ── HERO CARROUSEL ── */
     .hero-carousel {
-      position: relative; overflow: hidden;
-      min-height: calc(100vh - 68px);
+      position: relative; overflow: visible;
+      min-height: auto;
+      height: auto;
     }
     .hero-slide {
-      position: absolute; inset: 0;
-      min-height: calc(100vh - 68px);
-      display: grid; grid-template-columns: 1fr 1fr;
+      position: relative; inset: auto;
+      min-height: auto;
+      height: auto;
+      display: none;
+      grid-template-columns: 1fr 1fr;
       align-items: center; gap: 4rem;
-      padding-left: 8vw; padding-right: 6vw;
-      overflow: hidden;
-      opacity: 0;
+      padding-left: 8vw; padding-right: 6vw; padding-top: 4rem; padding-bottom: 4rem;
+      overflow: visible;
+      opacity: 1;
       transition: opacity 0.8s ease-in-out;
-      pointer-events: none;
+      pointer-events: auto;
     }
     .hero-slide.active {
+      display: grid;
       opacity: 1;
       pointer-events: auto;
       z-index: 1;
@@ -597,7 +601,7 @@
   <div><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="services.html">Services</a></li><li><a href="cas-clients.html">Cas clients</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact</a></li></ul></div>
   <div><h4>Contact</h4><ul><li><a href="mailto:contact@capaure.com">contact@capaure.com</a></li><li><a href="contact.html">Prendre RDV →</a></li></ul></div>
 </footer>
-<div class="footer-bottom"><span>© 2025 Capaure Data</span><span><a href="#">Mentions légales</a> · <a href="#">RGPD</a></span><span style="font-size: 0.7rem; color: rgba(255,255,255,.2);">v1.2.0</span></div>
+<div class="footer-bottom"><span>© 2025 Capaure Data</span><span><a href="#">Mentions légales</a> · <a href="#">RGPD</a></span><span style="font-size: 0.7rem; color: rgba(255,255,255,.2);">v1.2.1</span></div>
 
 <script src="js/main.js"></script>
 <script>
