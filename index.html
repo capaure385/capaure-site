@@ -459,9 +459,9 @@
       <div class="hero-bg-circle c2" style="background: rgba(26,188,176,.08); left: 30%; bottom: 5%;"></div>
     </div>
     <div class="hero-content" style="grid-template-columns: 1fr; max-width: 100%;">
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; align-items: center; position: relative;">
-        <!-- Colonne gauche : Situation actuelle -->
-        <div>
+      <div style="display: grid; grid-template-columns: 1fr 0.5fr 1fr; gap: 1.5rem; align-items: center; position: relative;">
+        <!-- Colonne gauche : Situation actuelle ENCADREE -->
+        <div style="border: 2px solid rgba(211, 47, 47, 0.3); border-radius: 16px; padding: 2rem; background: rgba(211, 47, 47, 0.03); box-shadow: 0 4px 16px rgba(211, 47, 47, 0.08);">
           <h2 style="font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #d32f2f; margin-bottom: 1.5rem;">Situation actuelle</h2>
           <div style="display: flex; flex-direction: column; gap: 1.2rem;">
             <div style="display: flex; align-items: flex-start; gap: 0.8rem;">
@@ -502,31 +502,26 @@
           </div>
         </div>
         
-        <!-- Colonne centrale : Flèche de transformation -->
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
-          <svg width="60" height="120" viewBox="0 0 60 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 1rem 0;">
-            <!-- Flèche -->
+        <!-- Colonne centrale : GROSSE FLECHE avec LOGO OFFICIEL -->
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0;">
+          <svg width="100" height="200" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0;">
             <defs>
-              <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <linearGradient id="arrowGradLarge" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" style="stop-color:#d32f2f;stop-opacity:1" />
                 <stop offset="50%" style="stop-color:#1ABCB0;stop-opacity:1" />
                 <stop offset="100%" style="stop-color:#1ABCB0;stop-opacity:1" />
               </linearGradient>
             </defs>
-            <line x1="30" y1="10" x2="30" y2="100" stroke="url(#arrowGrad)" stroke-width="3" stroke-linecap="round"/>
-            <polygon points="30,110 20,95 40,95" fill="#1ABCB0"/>
+            <line x1="50" y1="20" x2="50" y2="160" stroke="url(#arrowGradLarge)" stroke-width="6" stroke-linecap="round"/>
+            <polygon points="50,185 25,150 75,150" fill="#1ABCB0"/>
           </svg>
-          <div style="text-align: center;">
-            <div style="font-family: 'DM Serif Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--teal); letter-spacing: 0.05em; margin-bottom: 0.5rem;">LA TRANSFORMATION</div>
-            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #1ABCB0 0%, #0d9b8f 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 8px 24px rgba(26,188,176,.25);">
-              <span style="font-family: 'DM Serif Display', serif; font-size: 2.2rem; font-weight: 700; color: white;">C</span>
-            </div>
-            <div style="font-family: 'DM Sans', sans-serif; font-size: 0.75rem; color: var(--gray); margin-top: 0.5rem; font-weight: 500;">CAPAURE DATA</div>
+          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10;">
+            <img src="assets/logo.png" alt="Capaure Data" style="width: 100px; height: auto; filter: drop-shadow(0 8px 24px rgba(26,188,176,.3));">
           </div>
         </div>
         
-        <!-- Colonne droite : Solution Capaure -->
-        <div>
+        <!-- Colonne droite : Solution Capaure ENCADREE -->
+        <div style="border: 2px solid rgba(26, 188, 176, 0.3); border-radius: 16px; padding: 2rem; background: rgba(26, 188, 176, 0.03); box-shadow: 0 4px 16px rgba(26, 188, 176, 0.08);">
           <h2 style="font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--teal); margin-bottom: 1.5rem;">Solution Capaure</h2>
           <div style="display: flex; flex-direction: column; gap: 1.2rem;">
             <div style="display: flex; align-items: flex-start; gap: 0.8rem;">
@@ -564,6 +559,7 @@
         </div>
       </div>
     </div>
+
   </div>
 
   <!-- Diapositive 1 : La donnée au service de votre terrain -->
@@ -728,7 +724,7 @@
   <div><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="services.html">Services</a></li><li><a href="cas-clients.html">Cas clients</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact</a></li></ul></div>
   <div><h4>Contact</h4><ul><li><a href="contact.html">Prendre RDV →</a></li></ul></div>
 </footer>
-<div class="footer-bottom"><span>© 2025 Capaure Data</span><span><a href="#">Mentions légales</a> · <a href="#">RGPD</a></span><span style="font-size: 0.7rem; color: rgba(255,255,255,.2);">v1.3.1</span></div>
+<div class="footer-bottom"><span>© 2025 Capaure Data</span><span><a href="#">Mentions légales</a> · <a href="#">RGPD</a></span><span style="font-size: 0.7rem; color: rgba(255,255,255,.2);">v1.3.2</span></div>
 
 <script src="js/main.js"></script>
 <script>
