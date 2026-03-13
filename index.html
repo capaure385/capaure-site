@@ -45,6 +45,18 @@
       pointer-events: auto;
       z-index: 1;
     }
+    /* Style pour la nouvelle diapositive Situation vs Solution */
+    .hero-slide:first-of-type {
+      grid-template-columns: 1fr;
+    }
+    .hero-slide:first-of-type .hero-content {
+      grid-column: 1;
+    }
+    @media (max-width: 768px) {
+      .hero-slide:first-of-type [style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+    }
     .hero-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
     .hero-bg-circle { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .18; }
     .hero-bg-circle.c1 { width: 600px; height: 600px; background: var(--teal); right: -100px; top: -100px; }
@@ -440,8 +452,98 @@
 
 <!-- HERO CARROUSEL -->
 <section class="hero-carousel">
-  <!-- Diapositive 1 : La donnée au service de votre terrain -->
+  <!-- Diapositive 0 : Situation vs Solution (NOUVELLE) -->
   <div class="hero-slide active">
+    <div class="hero-bg">
+      <div class="hero-bg-circle c1" style="background: rgba(255,95,87,.08); right: -100px; top: -100px;"></div>
+      <div class="hero-bg-circle c2" style="background: rgba(26,188,176,.08); left: 30%; bottom: 5%;"></div>
+    </div>
+    <div class="hero-content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+        <!-- Colonne gauche : Situation actuelle -->
+        <div>
+          <h2 style="font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: #d32f2f; margin-bottom: 1.5rem;">Situation actuelle</h2>
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div style="display: flex; align-items: flex-start; gap: 0.8rem;">
+              <span style="font-size: 1.2rem; color: #d32f2f;">⚠️</span>
+              <div>
+                <div style="font-weight: 600; color: var(--dark);">Trésorerie difficile</div>
+                <div style="font-size: 0.85rem; color: var(--dark-soft);">Cash-flow imprévisible et fragile</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 0.8rem;">
+              <span style="font-size: 1.2rem; color: #d32f2f;">❌</span>
+              <div>
+                <div style="font-weight: 600; color: var(--dark);">CA Perdu</div>
+                <div style="font-size: 0.85rem; color: var(--dark-soft);">Devis non suivis, opportunités manquées</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 0.8rem;">
+              <span style="font-size: 1.2rem; color: #d32f2f;">🐌</span>
+              <div>
+                <div style="font-weight: 600; color: var(--dark);">Recouvrement lent</div>
+                <div style="font-size: 0.85rem; color: var(--dark-soft);">Créances mal pilotées, délais allongés</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 0.8rem;">
+              <span style="font-size: 1.2rem; color: #d32f2f;">🔍</span>
+              <div>
+                <div style="font-weight: 600; color: var(--dark);">Coûts cachés</div>
+                <div style="font-size: 0.85rem; color: var(--dark-soft);">Inefficacités non détectées, marges érodées</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 0.8rem;">
+              <span style="font-size: 1.2rem; color: #d32f2f;">📦</span>
+              <div>
+                <div style="font-weight: 600; color: var(--dark);">Retards de livraison</div>
+                <div style="font-size: 0.85rem; color: var(--dark-soft);">Pénalités clients, satisfaction dégradée</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Colonne droite : Solution Capaure -->
+        <div>
+          <h2 style="font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--teal); margin-bottom: 1.5rem;">Solution Capaure</h2>
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div style="display: flex; align-items: flex-start; gap: 0.8rem;">
+              <span style="font-size: 1.2rem; color: var(--teal);">✅</span>
+              <div>
+                <div style="font-weight: 600; color: var(--dark);">Vendre plus</div>
+                <div style="font-size: 0.85rem; color: var(--dark-soft);">Conversion devis optimisée, CA récupéré</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 0.8rem;">
+              <span style="font-size: 1.2rem; color: var(--teal);">⚡</span>
+              <div>
+                <div style="font-weight: 600; color: var(--dark);">Encaisser vite</div>
+                <div style="font-size: 0.85rem; color: var(--dark-soft);">DSO réduit, trésorerie libérée</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 0.8rem;">
+              <span style="font-size: 1.2rem; color: var(--teal);">🚀</span>
+              <div>
+                <div style="font-weight: 600; color: var(--dark);">Livrer mieux</div>
+                <div style="font-size: 0.85rem; color: var(--dark-soft);">OTD amélioré, satisfaction client accrue</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 0.8rem;">
+              <span style="font-size: 1.2rem; color: var(--teal);">💪</span>
+              <div>
+                <div style="font-weight: 600; color: var(--dark);">Protéger vos marges</div>
+                <div style="font-size: 0.85rem; color: var(--dark-soft);">Coûts maîtrisés, profitabilité renforcée</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-actions" style="margin-top: 2rem;">
+            <a href="contact.html" class="btn-primary">Diagnostic gratuit →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Diapositive 1 : La donnée au service de votre terrain -->
+  <div class="hero-slide">
     <div class="hero-bg">
       <div class="hero-bg-circle c1"></div>
       <div class="hero-bg-circle c2"></div>
@@ -602,7 +704,7 @@
   <div><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="services.html">Services</a></li><li><a href="cas-clients.html">Cas clients</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact</a></li></ul></div>
   <div><h4>Contact</h4><ul><li><a href="contact.html">Prendre RDV →</a></li></ul></div>
 </footer>
-<div class="footer-bottom"><span>© 2025 Capaure Data</span><span><a href="#">Mentions légales</a> · <a href="#">RGPD</a></span><span style="font-size: 0.7rem; color: rgba(255,255,255,.2);">v1.2.9</span></div>
+<div class="footer-bottom"><span>© 2025 Capaure Data</span><span><a href="#">Mentions légales</a> · <a href="#">RGPD</a></span><span style="font-size: 0.7rem; color: rgba(255,255,255,.2);">v1.3.0</span></div>
 
 <script src="js/main.js"></script>
 <script>
