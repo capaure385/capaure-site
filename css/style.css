@@ -853,32 +853,32 @@ footer ul li a:hover { color: var(--teal); }
 
 /* ── VALEURS & ENGAGEMENT SECTION ── */
 .values-section {
-  padding: 6rem 8vw;
+  padding: 3.5rem 8vw;
   background: linear-gradient(135deg, rgba(232,250,249,.5) 0%, rgba(255,255,255,0) 100%);
   position: relative;
 }
 
 .values-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 
 .values-header h2 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .values-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .value-card {
   background: white;
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
   transition: all .3s ease;
   box-shadow: 0 2px 12px rgba(0,0,0,.05);
@@ -892,14 +892,14 @@ footer ul li a:hover { color: var(--teal); }
 
 .value-icon {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
   display: block;
 }
 
 .value-card h3 {
   font-family: 'DM Serif Display', serif;
-  font-size: 1.3rem;
-  margin-bottom: .8rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
   color: var(--dark);
 }
 
@@ -913,10 +913,10 @@ footer ul li a:hover { color: var(--teal); }
 .commitment-box {
   background: linear-gradient(135deg, var(--teal) 0%, #0f9b91 100%);
   border-radius: 16px;
-  padding: 2.5rem;
+  padding: 2rem;
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 1.5rem;
   color: white;
   box-shadow: 0 8px 40px rgba(26,188,176,.25);
   position: relative;
@@ -949,14 +949,14 @@ footer ul li a:hover { color: var(--teal); }
 
 .commitment-content h3 {
   font-family: 'DM Serif Display', serif;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
   color: white;
 }
 
 .commitment-content p {
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: rgba(255,255,255,.95);
 }
 
