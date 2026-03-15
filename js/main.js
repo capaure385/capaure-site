@@ -75,6 +75,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ── MENU BURGER MOBILE ──
+  const navBurger = document.getElementById('navBurger');
+  const navLinks = document.querySelector('.nav-links');
+  if (navBurger && navLinks) {
+    navBurger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      navBurger.classList.toggle('active');
+    });
+    // Fermer le menu quand on clique sur un lien
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        navBurger.classList.remove('active');
+      });
+    });
+  }
+
 });
 
   // ── FILTRAGE CAS CLIENTS ──
