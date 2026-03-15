@@ -523,10 +523,10 @@ footer ul li a:hover { color: var(--teal); }
 .about-content .lead { font-size: 1.05rem; line-height: 1.7; color: var(--dark-soft); margin-bottom: 2rem; }
 
 .avatar-wrap { display: flex; justify-content: center; align-items: center; position: relative; }
-.avatar-ring { width: 320px; height: 320px; border-radius: 50%; background: linear-gradient(135deg, var(--teal-light), var(--teal-mid)); display: flex; align-items: center; justify-content: center; position: relative; }
+.avatar-ring { width: 400px; height: 400px; border-radius: 50%; background: linear-gradient(135deg, var(--teal-light), var(--teal-mid)); display: flex; align-items: center; justify-content: center; position: relative; }
 .avatar-ring::before { content: ''; position: absolute; inset: -8px; border-radius: 50%; border: 2px dashed var(--teal-mid); animation: rotate 30s linear infinite; }
 .avatar-ring::after  { content: ''; position: absolute; inset: -20px; border-radius: 50%; border: 1px solid var(--teal-light); }
-.avatar-inner { width: 260px; height: 260px; border-radius: 50%; background: var(--dark); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem; position: relative; overflow: hidden; }
+.avatar-inner { width: 340px; height: 340px; border-radius: 50%; background: white; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem; position: relative; overflow: hidden; }
 .avatar-inner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 40% 30%, rgba(26,188,176,.25), transparent 60%); }
 .avatar-initial { font-family: 'DM Serif Display', serif; font-size: 5rem; color: var(--teal); line-height: 1; position: relative; z-index: 1; }
 .avatar-name    { font-family: 'Space Mono', monospace; font-size: .65rem; color: rgba(255,255,255,.5); letter-spacing: .12em; text-transform: uppercase; position: relative; z-index: 1; }
@@ -611,8 +611,8 @@ footer ul li a:hover { color: var(--teal); }
   .stats-band { grid-template-columns: 1fr 1fr; }
   .sectors-list { grid-template-columns: 1fr 1fr; }
   .about-hero { grid-template-columns: 1fr; gap: 3rem; }
-  .avatar-ring { width: 240px; height: 240px; }
-  .avatar-inner { width: 190px; height: 190px; }
+  .avatar-ring { width: 300px; height: 300px; }
+  .avatar-inner { width: 260px; height: 260px; }
   .parcours-grid { grid-template-columns: 1fr; }
   .parcours-sticky { position: static; }
   .values-grid { grid-template-columns: 1fr; }
