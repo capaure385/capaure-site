@@ -588,10 +588,50 @@
     </div>
   </div>
 
+  <!-- Diapositive 3 : Nos engagements -->
+  <div class="hero-slide">
+    <div class="hero-bg">
+      <div class="hero-bg-circle c1" style="background: rgba(26,188,176,.12)"></div>
+      <div class="hero-bg-circle c2" style="background: rgba(26,188,176,.08)"></div>
+    </div>
+    <div class="hero-content">
+      <div class="eyebrow-pill">Nos engagements</div>
+      <h1>Votre succès est notre <em>priorité</em></h1>
+      <p class="hero-sub">Nous construisons chaque mission sur la confiance, la transparence et l'engagement de résultats concrets. Voici les principes qui nous guident.</p>
+      <div class="hero-levers">
+        <div class="lever-item">
+          <div class="lever-icon">🤝</div>
+          <div class="lever-title">Proximité</div>
+          <div class="lever-desc">Accompagnement en face-à-face pour mieux comprendre votre contexte unique et vos défis spécifiques.</div>
+        </div>
+        <div class="lever-item">
+          <div class="lever-icon">🎯</div>
+          <div class="lever-title">Personnalisation</div>
+          <div class="lever-desc">Solutions sur mesure adaptées à votre secteur, vos contraintes et vos ambitions de croissance.</div>
+        </div>
+        <div class="lever-item">
+          <div class="lever-icon">⚡</div>
+          <div class="lever-title">Pragmatisme</div>
+          <div class="lever-desc">Outils simples, efficaces et accessibles, pensés pour votre budget et vos capacités techniques réelles.</div>
+        </div>
+        <div class="lever-item">
+          <div class="lever-icon">🔄</div>
+          <div class="lever-title">Flexibilité</div>
+          <div class="lever-desc">Adaptation constante à vos évolutions et aux défis spécifiques de votre secteur d'activité.</div>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn-primary">Diagnostic gratuit →</a>
+        <a href="a-propos.html" class="btn-secondary">En savoir plus <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+
   <!-- Indicateurs de navigation -->
   <div class="carousel-dots">
     <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
     <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+    <button class="dot" data-slide="2" aria-label="Slide 3"></button>
   </div>
 </section>
 
@@ -664,7 +704,7 @@
   // Auto-rotate carrousel toutes les 8 secondes
   let currentSlide = 0;
   setInterval(() => {
-    currentSlide = (currentSlide + 1) % 2;
+    currentSlide = (currentSlide + 1) % 3;
     showSlide(currentSlide);
   }, 8000);
 </script>
