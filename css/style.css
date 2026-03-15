@@ -849,3 +849,137 @@ footer ul li a:hover { color: var(--teal); }
 .article-references a:hover {
   color: #148f86;
 }
+
+
+/* ── VALEURS & ENGAGEMENT SECTION ── */
+.values-section {
+  padding: 6rem 8vw;
+  background: linear-gradient(135deg, rgba(232,250,249,.5) 0%, rgba(255,255,255,0) 100%);
+  position: relative;
+}
+
+.values-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.values-header h2 {
+  margin-bottom: 1.5rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.value-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all .3s ease;
+  box-shadow: 0 2px 12px rgba(0,0,0,.05);
+}
+
+.value-card:hover {
+  border-color: var(--teal);
+  box-shadow: 0 8px 32px rgba(26,188,176,.15);
+  transform: translateY(-4px);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.value-card h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: .8rem;
+  color: var(--dark);
+}
+
+.value-card p {
+  font-size: .95rem;
+  line-height: 1.6;
+  color: var(--dark-soft);
+}
+
+/* Engagement Box */
+.commitment-box {
+  background: linear-gradient(135deg, var(--teal) 0%, #0f9b91 100%);
+  border-radius: 16px;
+  padding: 2.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  color: white;
+  box-shadow: 0 8px 40px rgba(26,188,176,.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.commitment-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255,255,255,.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.commitment-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.commitment-content {
+  position: relative;
+  z-index: 2;
+}
+
+.commitment-content h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.commitment-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,.95);
+}
+
+@media (max-width: 768px) {
+  .values-section {
+    padding: 4rem 5vw;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .commitment-box {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .commitment-icon {
+    font-size: 2rem;
+  }
+
+  .commitment-content h3 {
+    font-size: 1.2rem;
+  }
+}
