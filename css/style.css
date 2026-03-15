@@ -564,6 +564,40 @@ footer ul li a:hover { color: var(--teal); }
 .expertise-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
 .expertise-item span { font-size: .88rem; color: var(--dark-soft); }
 
+/* ── FILTRAGE CAS CLIENTS ── */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--border);
+  background: white;
+  color: var(--dark-soft);
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.filter-btn.active {
+  background: var(--teal);
+  color: white;
+  border-color: var(--teal);
+  box-shadow: 0 4px 15px rgba(26,188,176,0.3);
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .nav-links { display: none; }

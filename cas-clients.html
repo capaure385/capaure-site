@@ -45,8 +45,15 @@
 <section class="reveal" style="padding: 5rem 8vw;">
   <div class="section-label">Cas clients</div>
   <h2>Missions <em>récentes</em></h2>
+  <div class="filter-buttons mb-8 flex flex-wrap gap-2">
+    <button class="filter-btn active" data-filter="all">Tout</button>
+    <button class="filter-btn" data-filter="expert-data-partage">Expert Data Partagé</button>
+    <button class="filter-btn" data-filter="pack-kpi">Pack KPI</button>
+    <button class="filter-btn" data-filter="sauvetage-systeme">Sauvetage Système</button>
+    <button class="filter-btn" data-filter="coaching-alternance-data">Coaching Alternance Data</button>
+  </div>
   <div class="cases-grid">
-    <div class="case-card">
+    <div class="case-card" data-category="expert-data-partage">
       <div class="case-header"><div><span class="case-sector">Coopérative céréales</span><h3>Pilotage des créances adhérents et alertes de dépassement</h3></div><div class="case-icon">🌾</div></div>
       <div class="case-body">
         <p class="case-challenge">Encours adhérents suivis manuellement sur Excel. Le DAF passait 2 jours/semaine à consolider les données avant de pouvoir agir.</p>
@@ -55,7 +62,7 @@
       </div>
       <div class="case-footer"><span class="case-offer">Expert Data Partagé</span><span class="case-duration">12 semaines</span></div>
     </div>
-    <div class="case-card">
+    <div class="case-card" data-category="pack-kpi">
       <div class="case-header"><div><span class="case-sector">PME agroalimentaire</span><h3>Amélioration du taux de conversion devis → commande</h3></div><div class="case-icon">📊</div></div>
       <div class="case-body">
         <p class="case-challenge">Taux de transformation des devis inconnu. Relances manuelles, sans priorisation.</p>
@@ -65,7 +72,7 @@
       </div>
       <div class="case-footer"><span class="case-offer">Pack KPI</span><span class="case-duration">8 semaines</span></div>
     </div>
-    <div class="case-card">
+    <div class="case-card" data-category="pack-kpi">
       <div class="case-header"><div><span class="case-sector">PME logistique</span><h3>Tableau de bord OTD et alertes retards transporteurs</h3></div><div class="case-icon">🚚</div></div>
       <div class="case-body">
         <p class="case-challenge">Taux de service livraison calculé en fin de mois uniquement. Clients qui appelaient avant que l'entreprise soit au courant.</p>
@@ -75,7 +82,7 @@
       </div>
       <div class="case-footer"><span class="case-offer">Pack KPI</span><span class="case-duration">10 semaines</span></div>
     </div>
-    <div class="case-card">
+    <div class="case-card" data-category="coaching-alternance-data">
       <div class="case-header"><div><span class="case-sector">Coopérative agrofood</span><h3>Coaching alternance data : dashboard campagne collecte</h3></div><div class="case-icon">🌾</div></div>
       <div class="case-body">
         <p class="case-challenge">Pas de ressource data interne, budget limité. L'alternance encadrée a permis de lancer le projet à coût maîtrisé.</p>
@@ -84,7 +91,7 @@
       </div>
       <div class="case-footer"><span class="case-offer">Coaching Alternance Data</span><span class="case-duration">12 mois</span></div>
     </div>
-    <div class="case-card">
+    <div class="case-card" data-category="coaching-alternance-data">
       <div class="case-header"><div><span class="case-sector">Éditeur de logiciel</span><h3>Mise en place d'une plateforme data et pilotage des KPIs produit</h3></div><div class="case-icon">💻</div></div>
       <div class="case-body">
         <p class="case-challenge">Pas de visibilité sur l'utilisation réelle du produit par les clients. Données dispersées entre plusieurs outils. Équipe produit sans accès aux métriques clés.</p>
@@ -93,7 +100,7 @@
       </div>
       <div class="case-footer"><span class="case-offer">Coaching Alternance Data</span><span class="case-duration">12 mois</span></div>
     </div>
-    <div class="case-card">
+    <div class="case-card" data-category="sauvetage-systeme">
       <div class="case-header"><div><span class="case-sector">PME triage de semences</span><h3>Sauvetage du système de tri : automatisation et sécurisation des processus</h3></div><div class="case-icon">🌱</div></div>
       <div class="case-body">
         <p class="case-challenge">Système de tri obsolète, développeur parti, processus manuel avec personne clé irremplaçable. Risque de blocage complet de la production.</p>
@@ -102,7 +109,7 @@
       </div>
       <div class="case-footer"><span class="case-offer">Sauvetage Système</span><span class="case-duration">8 semaines</span></div>
     </div>
-    <div class="case-card">
+    <div class="case-card" data-category="pack-kpi">
       <div class="case-header"><div><span class="case-sector">Direction Achats</span><h3>Optimisation appel d'offre transport froid : simulation de routes et négociation data-driven</h3></div><div class="case-icon">📊</div></div>
       <div class="case-body">
         <p class="case-challenge">Appel d'offre transport complexe avec milliers de lignes de routes. Impossible d'analyser manuellement l'impact des nouveaux tarifs sur le coût total. Negociation à l'aveugle.</p>
@@ -142,7 +149,7 @@
   <div><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="services.html">Services</a></li><li><a href="cas-clients.html">Cas clients</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact</a></li></ul></div>
   <div><h4>Contact</h4><ul><li><a href="contact.html">Prendre RDV →</a></li></ul></div>
 </footer>
-<div class="footer-bottom"><span>© 2025 Capaure Data</span><span><a href="#">Mentions légales</a> · <a href="#">RGPD</a></span><span style="font-size: 0.7rem; color: rgba(255,255,255,.2);">v1.2.9</span></div>
+<div class="footer-bottom"><span>© 2025 Capaure Data</span><span><a href="#">Mentions légales</a> · <a href="#">RGPD</a></span><span style="font-size: 0.7rem; color: rgba(255,255,255,.2);">v1.4.2</span></div>
 <script src="js/main.js"></script>
 </body>
 </html>

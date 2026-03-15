@@ -76,3 +76,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+  // ── FILTRAGE CAS CLIENTS ──
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const caseCards = document.querySelectorAll(".case-card");
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const filter = button.dataset.filter;
+
+      caseCards.forEach(card => {
+        if (filter === "all" || card.dataset.category === filter) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
